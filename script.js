@@ -8,6 +8,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/** Blog 详情页：根据 ?id=xxx 加载文章 */
+function setupBlogDetail() {
+  const detailContainer = document.getElementById("blog-detail");
+  if (!detailContainer) return; // 不在 blog.html 就直接退出
+
+  const titleEl = document.getElementById("blog-detail-title");
+  const metaEl = document.getElementById("blog-detail-meta");
+  const contentEl = document.getElementById("blog-detail-content");
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) {
+    titleEl.textContent = "文章不存在";
+    metaEl.textContent = "";
+    contentEl.textContent = "没有提供文章 ID。";
+    return;
+  }
+
+  fetch("data/blog.json")
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("blog.json not found");
+      }
+      return res.json();
+    })
+    .then((list) => {
+      const post = Array.isArray(list)
+        ? list.find((item) => item.id === id)
+        : null;
+
+      if (!post) {
+        titleEl.textContent = "文章未找到";
+        metaEl.textContent = "";
+        contentEl.textContent = "请检查链接是否正确，或文章是否已被删除。";
+        return;
+      }
+
+      titleEl.textContent = post.title || "未命名文章";
+      metaEl.textContent = post.date ? `发布日期：${post.date}` : "";
+
+      // 如果配置了 file，则去拉对应 HTML 文件
+      if (post.file) {
+        fetch(post.file)
+          .then((res) => {
+            if (!res.ok) throw new Error("article file not found");
+            return res.text();
+          })
+          .then((html) => {
+            contentEl.innerHTML = html;
+          })
+          .catch(() => {
+            contentEl.textContent = "文章内容加载失败，请稍后重试。";
+          });
+      } else if (post.content) {
+        // 备用：直接从 JSON 的 content 字段渲染纯文本
+        contentEl.textContent = post.content;
+      } else {
+        contentEl.textContent = "这篇文章暂时没有内容。";
+      }
+    })
+    .catch(() => {
+      titleEl.textContent = "加载失败";
+      metaEl.textContent = "";
+      contentEl.textContent = "无法加载文章数据，请检查网络或 JSON 配置。";
+    });
+}
+
+
 /** 页脚年份 */
 function setupYear() {
   const yearSpan = document.getElementById("year");
@@ -392,9 +461,12 @@ function setupMusicPlayer() {
     musicToggle.textContent = collapsed ? "▴" : "▾";
   });
 
+  
+
   // 初始化
   loadPlaylist();
 }
+
 
 
 
