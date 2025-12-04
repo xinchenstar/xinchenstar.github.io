@@ -1,17 +1,18 @@
 [
   {
-    "name": "课程讲义：金融衍生品前沿.pdf",
-    "description": "课程相关讲义，包含课堂 PPT 与延伸阅读资料。",
-    "type": "PDF",
-    "size": "3.4MB",
+    "name": "music.mp3",
+    "description": "一首小曲",
+    "type": "mp3",
+    "size": "9.0MB",
     "url": "music/2.mp3"
   },
   {
-    "name": "示例代码：投资组合优化.zip",
-    "description": "用于投资组合有效边界计算的 R / Python 代码示例。",
-    "type": "ZIP",
+    "name": "test.pdf",
+    "description": "test。",
+    "type": "PDF",
     "size": "120KB",
-    "url": "https://your-domain.com/files/portfolio-code.zip"
+    "url": "www.baidu.com"
   }
 ]
+
 
