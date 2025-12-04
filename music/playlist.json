@@ -1,13 +1,22 @@
 [
   {
-    "title": "2",
+    "title": "判断型",
     "file": "music/1.mp3"
   },
   {
-    "title": "Ayanami's Theme",
-    "file": "music/track2.mp3"
+    "title": "水兼花",
+    "file": "music/2.mp3"
+  },
+  {
+    "title": "看你在对面阳台看风景",
+    "file": "music/3.mp3"
+  },
+  {
+    "title": "test",
+    "file": "music/4.mp3"
   }
 ]
+
 
 
 
