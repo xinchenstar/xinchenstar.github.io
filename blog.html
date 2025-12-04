@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog · 文章详情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 顶部导航：这里跳回首页不同区域 -->
+  <header class="top-nav">
+    <div class="nav-brand">
+      <span class="brand-code">PROJECT-01</span>
+      <span class="brand-title">Blog Detail</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html#about" class="nav-link">关于我</a>
+      <a href="index.html#resources" class="nav-link">资源下载</a>
+      <a href="index.html#blog" class="nav-link">Blog</a>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <section class="section-panel">
+      <a href="index.html#blog" class="blog-back-link">← 返回 Blog 列表</a>
+
+      <article class="blog-detail" id="blog-detail">
+        <h1 class="blog-detail-title" id="blog-detail-title">Loading...</h1>
+        <p class="blog-detail-meta" id="blog-detail-meta"></p>
+        <div class="blog-detail-content" id="blog-detail-content">
+          正在加载文章内容…
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- 悬浮音乐播放器（复用之前的） -->
+  <div class="music-player" id="music-player">
+    <div class="music-header">
+      <span class="music-title">MUSIC CONSOLE</span>
+      <button class="music-toggle" id="music-toggle" aria-label="折叠/展开播放器">
+        ▾
+      </button>
+    </div>
+    <div class="music-body">
+      <div class="music-now">
+        正在播放：<span id="current-track">-</span>
+      </div>
+      <div class="music-controls">
+        <button id="prev-btn" class="control-btn" aria-label="上一曲">◂◂</button>
+        <button id="play-btn" class="control-btn" aria-label="播放/暂停">▶</button>
+        <button id="next-btn" class="control-btn" aria-label="下一曲">▸▸</button>
+      </div>
+      <div class="music-progress">
+        <span id="current-time" class="time-label">0:00</span>
+        <div class="progress-bar" id="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span id="duration" class="time-label">0:00</span>
+      </div>
+      <ul class="playlist" id="playlist"></ul>
+    </div>
+    <audio id="audio-player"></audio>
+  </div>
+
+  <footer class="page-footer">
+    <span>© <span id="year"></span> Your Name · EVA-styled static page</span>
+    <span class="footer-meta">Hosted on GitHub Pages</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
