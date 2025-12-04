@@ -1,0 +1,16 @@
+[
+  {
+    "name": "课程讲义：金融衍生品前沿.pdf",
+    "description": "课程相关讲义，包含课堂 PPT 与延伸阅读资料。",
+    "type": "PDF",
+    "size": "3.4MB",
+    "url": "https://your-domain.com/files/derivatives-notes.pdf"
+  },
+  {
+    "name": "示例代码：投资组合优化.zip",
+    "description": "用于投资组合有效边界计算的 R / Python 代码示例。",
+    "type": "ZIP",
+    "size": "120KB",
+    "url": "https://your-domain.com/files/portfolio-code.zip"
+  }
+]

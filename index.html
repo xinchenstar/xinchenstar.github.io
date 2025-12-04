@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>个人主页 | EVA Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 字体，可以按需替换或删除 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" 
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <header class="top-nav">
+    <div class="nav-brand">
+      <span class="brand-code">PROJECT-01</span>
+      <span class="brand-title">Personal Interface</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#about" class="nav-link">关于我</a>
+      <a href="#resources" class="nav-link">资源下载</a>
+      <a href="#blog" class="nav-link">Blog</a>
+    </nav>
+  </header>
+
+  <!-- 主体内容 -->
+  <main class="main-container">
+    <!-- “仪表盘”顶部区域 -->
+    <section class="hero-panel" id="about">
+      <div class="hero-left">
+        <div class="hero-badge">PROFILE</div>
+        <h1 class="hero-title">Hello, World_</h1>
+        <p class="hero-subtitle">
+          这里是我的个人主页 · EVA HUD 风格 · 极简但不简单。
+        </p>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-label">状态</span>
+            <span class="meta-value online">ONLINE</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">模式</span>
+            <span class="meta-value">STANDBY</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">版本</span>
+            <span class="meta-value">v1.0.0</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="avatar-frame">
+          <div class="avatar-placeholder">
+            <!-- 这里可以放头像图片 -->
+            <span>ANIME<br />PROFILE</span>
+          </div>
+          <div class="avatar-overlay">
+            <span class="overlay-line">SYNC RATIO: 82.3%</span>
+            <span class="overlay-line">UNIT: EVA-00X</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于我详细信息 -->
+    <section class="section-panel">
+      <h2 class="section-title">关于我 · ABOUT</h2>
+      <div class="section-content grid-2">
+        <div>
+          <p>
+            这里可以写你的个人简介：专业、兴趣、正在做的项目等。<br />
+            例如：喜欢二次元、金融、语言学 / 翻译，正在研究 XXX。
+          </p>
+          <p>
+            你可以根据需要自由扩展这部分内容，比如添加时间线、技能列表等。
+          </p>
+        </div>
+        <div class="info-list">
+          <div class="info-row">
+            <span class="info-label">ID</span>
+            <span class="info-value">USER-0001</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">FOCUS</span>
+            <span class="info-value">EN/JP · Finance · Dev</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">EMAIL</span>
+            <span class="info-value">you@example.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资源下载 -->
+    <section class="section-panel" id="resources">
+      <h2 class="section-title">资源下载 · RESOURCES</h2>
+      <p class="section-desc">
+        下列表格内容由 <code>data/resources.json</code> 自动加载。你只需要在后台 / 仓库中更新该文件即可。
+      </p>
+      <div id="resource-list" class="card-grid">
+        <!-- JS 动态填充 -->
+      </div>
+      <p class="section-hint">
+        * 示例：可以放课件、论文、代码打包文件、电子书等下载链接。
+      </p>
+    </section>
+
+    <!-- Blog 列表 -->
+    <section class="section-panel" id="blog">
+      <h2 class="section-title">Blog · LOG</h2>
+      <p class="section-desc">
+        博文列表由 <code>data/blog.json</code> 自动生成，可单独维护 markdown / 文档后在 JSON 中挂链接。
+      </p>
+      <div id="blog-list" class="blog-list">
+        <!-- JS 动态填充 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- 悬浮音乐播放器 -->
+  <div class="music-player" id="music-player">
+    <div class="music-header">
+      <span class="music-title">MUSIC CONSOLE</span>
+      <button class="music-toggle" id="music-toggle" aria-label="折叠/展开播放器">
+        ▾
+      </button>
+    </div>
+    <div class="music-body">
+      <div class="music-now">
+        正在播放：<span id="current-track">-</span>
+      </div>
+      <div class="music-controls">
+        <button id="prev-btn" class="control-btn" aria-label="上一曲">◂◂</button>
+        <button id="play-btn" class="control-btn" aria-label="播放/暂停">▶</button>
+        <button id="next-btn" class="control-btn" aria-label="下一曲">▸▸</button>
+      </div>
+      <div class="music-progress">
+        <span id="current-time" class="time-label">0:00</span>
+        <div class="progress-bar" id="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span id="duration" class="time-label">0:00</span>
+      </div>
+      <ul class="playlist" id="playlist">
+        <!-- JS 动态填充 -->
+      </ul>
+    </div>
+    <audio id="audio-player"></audio>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="page-footer">
+    <span>© <span id="year"></span> Your Name · EVA-styled static page</span>
+    <span class="footer-meta">Hosted on GitHub Pages</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
