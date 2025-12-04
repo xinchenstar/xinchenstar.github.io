@@ -196,19 +196,19 @@ function renderBlog(list, container) {
     wrapper.appendChild(header);
     wrapper.appendChild(summary);
 
-    if (item.url) {
+    // 关键：跳转到 blog.html?id=xxx
+    if (item.id) {
       const link = document.createElement("a");
       link.className = "blog-link";
-      link.href = item.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = "READ →";
+      link.href = `blog.html?id=${encodeURIComponent(item.id)}`;
+      link.textContent = "OPEN →";
       wrapper.appendChild(link);
     }
 
     container.appendChild(wrapper);
   });
 }
+
 
 /** 悬浮音乐播放器 */
 function setupMusicPlayer() {
@@ -391,3 +391,4 @@ function setupMusicPlayer() {
   // 初始化
   loadPlaylist();
 }
+
