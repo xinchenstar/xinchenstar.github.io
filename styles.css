@@ -73,6 +73,78 @@ body {
   color: var(--accent-primary);
 }
 
+.blog-back-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.blog-back-link:hover {
+  color: var(--accent-primary);
+}
+
+.blog-detail {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.blog-detail-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.blog-detail-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+}
+
+.blog-detail-content {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+/* 让正文里的常见元素也好看点 */
+.blog-detail-content h2,
+.blog-detail-content h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.blog-detail-content p {
+  margin: 6px 0;
+}
+
+.blog-detail-content ul,
+.blog-detail-content ol {
+  padding-left: 20px;
+  margin: 6px 0;
+}
+
+.blog-detail-content a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.blog-detail-content a:hover {
+  text-decoration: underline;
+}
+
+
 .brand-title {
   font-size: 14px;
   color: var(--text-muted);
@@ -735,6 +807,7 @@ body {
     width: auto;
   }
 }
+
 
 
 
