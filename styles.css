@@ -263,14 +263,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.76);
   overflow: hidden;
+  /* 原来这块样式可以基本保留 */
 }
+
+.avatar-placeholder .avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* 保持比例裁剪，不变形 */
+  display: block;
+}
+
 
 .avatar-overlay {
   position: absolute;
@@ -731,3 +734,4 @@ body {
     width: auto;
   }
 }
+
