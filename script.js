@@ -220,20 +220,20 @@ function loadBlog() {
     .then((data) => {
       renderBlog(data, container);
     })
-.catch(() => {
-  const sample = [
-    {
-      id: "sample-post",
-      title: "示例：第一篇博客",
-      date: "2025-01-01",
-      summary:
-        "这是一个示例 Blog 条目。你可以通过编辑 data/blog.json 来管理文章列表。",
-      file: "posts/sample.html"
-    }
-  ];
-  renderBlog(sample, container);
-});
-
+    .catch(() => {
+      const sample = [
+        {
+          id: "sample-post",
+          title: "示例：第一篇博客",
+          date: "2025-01-01",
+          summary:
+            "这是一个示例 Blog 条目。你可以通过编辑 data/blog.json 来管理文章列表。",
+          file: "posts/sample.html"
+        }
+      ];
+      renderBlog(sample, container);
+    });
+} 
 
 function renderBlog(list, container) {
   if (!Array.isArray(list) || list.length === 0) {
@@ -269,7 +269,7 @@ function renderBlog(list, container) {
     wrapper.appendChild(header);
     wrapper.appendChild(summary);
 
-    // 关键：跳转到 blog.html?id=xxx
+    // 跳转 blog.html?id=xxx
     if (item.id) {
       const link = document.createElement("a");
       link.className = "blog-link";
@@ -466,6 +466,7 @@ function setupMusicPlayer() {
   // 初始化
   loadPlaylist();
 }
+
 
 
 
