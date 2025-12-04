@@ -1,14 +1,16 @@
 [
   {
+    "id": "language-transfer",
     "title": "语言迁移与二语习得：一些思考",
     "date": "2025-11-30",
     "summary": "结合最近阅读的文献，回顾语言迁移的类型与对教学实践的启示。",
-    "url": "https://your-blog.com/posts/language-transfer"
+    "file": "posts/1.html"
   },
   {
+    "id": "us-cn-monetary-policy",
     "title": "中美货币政策分化：课堂展示复盘",
     "date": "2025-10-20",
     "summary": "记录一次课程展示准备到呈现的全过程及反思。",
-    "url": "https://your-blog.com/posts/us-cn-monetary-policy"
+    "file": "posts/2.html"
   }
 ]
