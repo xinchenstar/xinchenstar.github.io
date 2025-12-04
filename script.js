@@ -149,18 +149,20 @@ function loadBlog() {
     .then((data) => {
       renderBlog(data, container);
     })
-    .catch(() => {
-      const sample = [
-        {
-          title: "示例：第一篇博客",
-          date: "2025-01-01",
-          summary: "这是一个示例 Blog 条目。你可以通过编辑 data/blog.json 来管理文章列表。",
-          url: "#",
-        },
-      ];
-      renderBlog(sample, container);
-    });
-}
+.catch(() => {
+  const sample = [
+    {
+      id: "sample-post",
+      title: "示例：第一篇博客",
+      date: "2025-01-01",
+      summary:
+        "这是一个示例 Blog 条目。你可以通过编辑 data/blog.json 来管理文章列表。",
+      file: "posts/sample.html"
+    }
+  ];
+  renderBlog(sample, container);
+});
+
 
 function renderBlog(list, container) {
   if (!Array.isArray(list) || list.length === 0) {
@@ -391,4 +393,5 @@ function setupMusicPlayer() {
   // 初始化
   loadPlaylist();
 }
+
 
