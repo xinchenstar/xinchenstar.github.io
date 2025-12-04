@@ -4,7 +4,7 @@
     "description": "课程相关讲义，包含课堂 PPT 与延伸阅读资料。",
     "type": "PDF",
     "size": "3.4MB",
-    "url": "https://your-domain.com/files/derivatives-notes.pdf"
+    "url": "music/2.mp3"
   },
   {
     "name": "示例代码：投资组合优化.zip",
@@ -14,3 +14,4 @@
     "url": "https://your-domain.com/files/portfolio-code.zip"
   }
 ]
+
