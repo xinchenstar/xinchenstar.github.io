@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   loadResources();
   loadBlog();
   setupMusicPlayer();
+  setupBlogDetail();
+
 });
 
 /** 页脚年份 */
@@ -393,5 +395,6 @@ function setupMusicPlayer() {
   // 初始化
   loadPlaylist();
 }
+
 
 
